@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Basics Codelab</string>
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
+    <string name="lorem_ipsum">However, hard-coding strings is a bad practice and you should get them from the strings.xml file. You can use "Extract string resource" on each string, available in "Context Actions" in Android Studio to do this automatically. Alternatively, open app/src/res/values/strings.xml and add the resources.</string>
 </resources>
