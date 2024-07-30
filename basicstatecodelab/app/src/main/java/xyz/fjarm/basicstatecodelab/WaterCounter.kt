@@ -15,16 +15,16 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
-    var count by remember {
-        mutableStateOf(0)
-    }
     Column(
         modifier = modifier
             .padding(16.dp),
     ) {
+        var count by remember {
+            mutableStateOf(0)
+        }
         if (count > 0) {
             Text(
-                text = "You have had ${count} glasses",
+                text = "You have had $count glasses",
             )
         }
         Button(
