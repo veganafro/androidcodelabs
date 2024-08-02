@@ -9,10 +9,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,17 +19,16 @@ import xyz.fjarm.basicstatecodelab.ui.theme.BasicStateCodelabTheme
 fun WellnessTaskItem(
     modifier: Modifier = Modifier,
     taskName: String,
+    checked: Boolean,
     onClose: () -> Unit,
+    onCheckedChanged: (newValue: Boolean) -> Unit,
 ) {
-    var checkedState by rememberSaveable {
-        mutableStateOf(false)
-    }
     StatelessWellnessTaskItem(
         modifier = modifier,
         taskName = taskName,
-        checked = checkedState,
+        checked = checked,
         onCheckedChanged = { newValue: Boolean ->
-            checkedState = newValue
+            onCheckedChanged(newValue)
         },
         onClose = onClose,
     )

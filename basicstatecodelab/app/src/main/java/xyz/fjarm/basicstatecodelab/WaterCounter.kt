@@ -14,21 +14,28 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun WaterCounter(modifier: Modifier = Modifier) {
+fun WaterCounter(
+    modifier: Modifier = Modifier,
+    count: Int,
+    onIncrement: () -> Unit,
+ ) {
     StatefulCounter(
         modifier = modifier,
+        count = count,
+        onIncrement = onIncrement,
     )
 }
 
 @Composable
-fun StatefulCounter(modifier: Modifier = Modifier) {
-    var count by rememberSaveable {
-        mutableStateOf(0)
-    }
+fun StatefulCounter(
+    modifier: Modifier = Modifier,
+    count: Int,
+    onIncrement: () -> Unit,
+) {
     StatelessCounter(
         modifier = modifier,
         count = count,
-        onIncrement = { count++ },
+        onIncrement = onIncrement,
     )
 }
 
@@ -63,5 +70,9 @@ fun StatelessCounter(
 @Preview
 @Composable
 fun WaterCounterPreview() {
-    WaterCounter()
+    WaterCounter(
+        modifier = Modifier,
+        count = 0,
+        onIncrement = {},
+    )
 }
