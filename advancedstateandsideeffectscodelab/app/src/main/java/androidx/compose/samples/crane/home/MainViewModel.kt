@@ -16,7 +16,6 @@
 
 package androidx.compose.samples.crane.home
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.samples.crane.data.DestinationsRepository
 import androidx.compose.samples.crane.data.ExploreModel
 import androidx.compose.samples.crane.di.DefaultDispatcher
